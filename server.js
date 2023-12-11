@@ -2,7 +2,6 @@ const express = require('express');
 const app = express();
 
 const path = require('path');
-// app.use('/static', express.static(path.join(__dirname, 'public')));
 
 turnOnPaintingHandlers();
 turnOnArtistHandlers();
@@ -30,7 +29,6 @@ function turnOnGalleryHandlers(){
     galleriesAPI.handleAll(app);
     galleriesAPI.handleByCountry(app);
 }
-
 
 let port = 8080;
 app.listen(port, () => console.log("Server running at port= " + port));

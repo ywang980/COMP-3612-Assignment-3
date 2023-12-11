@@ -7,6 +7,13 @@ const handleAll = app => {
     app.get(`${paintingsRootPath}s`, (req, resp) => resp.json(paintings));
 };
 
+/*
+    For any request accepting a parameter, return the match(es) or a JSON message
+    if not found.
+
+    1 return value possible - check if matches is defined
+    multiple return values possible - check if array length > 0
+*/
 const handleByPaintingID = app => {
     app.get(`${paintingsRootPath}/:id`, (req, resp) => {
         const matches = paintings.find(painting => painting.paintingID == req.params.id);
@@ -54,9 +61,10 @@ const handleByColorMatch = app => {
         const name = (String(req.params.name)).toLowerCase();
 
         const matches = paintings.filter(painting => {
-            const dominantColors = painting.details.annotation.dominantColors;
+            const dominantColors = painting.details.annotation.dominantColors; //select dominantColors field
             let found = false;
 
+            //Iterate through each color, checking for a name match
             dominantColors.forEach(color => {
                 if(color.name.toLowerCase() == req.params.name.toLowerCase())
                     found = true;

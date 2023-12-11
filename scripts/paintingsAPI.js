@@ -62,15 +62,8 @@ const handleByColorMatch = app => {
 
         const matches = paintings.filter(painting => {
             const dominantColors = painting.details.annotation.dominantColors; //select dominantColors field
-            let found = false;
-
-            //Iterate through each color, checking for a name match
-            dominantColors.forEach(color => {
-                if(color.name.toLowerCase() == req.params.name.toLowerCase())
-                    found = true;
-            });
-
-            return found;
+            return (dominantColors.some(color => color.name.toLowerCase() == //check if there is a matching color
+                req.params.name.toLowerCase()));
         });
         matches.length > 0 ? resp.json(matches) :
             resp.json({ "message": "no matches found for provided color name" });

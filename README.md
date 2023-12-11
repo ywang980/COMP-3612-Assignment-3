@@ -5,9 +5,9 @@
 
 https://flaxen-gainful-moustache.glitch.me/api/paintings
 
-https://flaxen-gainful-moustache.glitch.me/api/paintings/433
+https://flaxen-gainful-moustache.glitch.me/api/painting/433
 
-https://flaxen-gainful-moustache.glitch.me/api/paintings/43374534856
+https://flaxen-gainful-moustache.glitch.me/api/painting/43374534856
 
 https://flaxen-gainful-moustache.glitch.me/api/painting/gallery/7
 

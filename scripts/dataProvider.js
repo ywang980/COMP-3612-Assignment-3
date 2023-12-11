@@ -12,6 +12,7 @@ module.exports = {
     galleries
 };
 
+// Get JSON with provided fileName at provided folder path
 function getJSON(folder, fileName) {
     const jsonPath = path.join(__dirname, folder, fileName);
     let jsonData = fs.readFileSync(jsonPath, 'utf8');

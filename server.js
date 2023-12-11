@@ -1,11 +1,12 @@
 const express = require('express');
 const app = express();
 
-const path = require('path');
-
 turnOnPaintingHandlers();
 turnOnArtistHandlers();
 turnOnGalleryHandlers();
+
+let port = 8080;
+app.listen(port, () => console.log("Server running at port= " + port));
 
 function turnOnPaintingHandlers() {
     const paintingsAPI = require('./scripts/paintingsAPI.js');
@@ -29,6 +30,3 @@ function turnOnGalleryHandlers(){
     galleriesAPI.handleAll(app);
     galleriesAPI.handleByCountry(app);
 }
-
-let port = 8080;
-app.listen(port, () => console.log("Server running at port= " + port));

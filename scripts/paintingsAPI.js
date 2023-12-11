@@ -11,8 +11,11 @@ const handleAll = app => {
     For any request accepting a parameter, return the match(es) or a JSON message
     if not found.
 
-    1 return value possible - check if matches is defined
-    multiple return values possible - check if array length > 0
+    1 return value possible: check if matches is defined
+    Multiple return values possible: check if array length > 0
+
+    Case insensitive insensitive search: convert URL parameter/JSON field
+    into lower-case only string
 */
 const handleByPaintingID = app => {
     app.get(`${paintingsRootPath}/:id`, (req, resp) => {
